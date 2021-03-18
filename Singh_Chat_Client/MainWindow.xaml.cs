@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Singh_SocketAsyncLib;
 
 namespace Singh_Chat_Client
 {
@@ -23,6 +24,11 @@ namespace Singh_Chat_Client
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Btn_Prova_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -39,19 +39,19 @@ namespace Singh_SocketAsyncLib
 
             mServer = new TcpListener(mIP, mPort);
 
-            Debug.WriteLine("Server in ascolto su IP: {0} - Porta: {1}"
+            Console.WriteLine("Server in ascolto su IP: {0} - Porta: {1}"
                                  , mIP.ToString(), mPort.ToString());
             mServer.Start();
             timerMsg();
 
-            Debug.WriteLine("Server avviato.");
+            Console.WriteLine("Server avviato.");
             while (true)
             {
                 TcpClient client = await mServer.AcceptTcpClientAsync();
 
                 mClients.Add(client);
 
-                Debug.WriteLine("Client Connessi: {0}. Client Connesso: {1}",
+                Console.WriteLine("Client Connessi: {0}. Client Connesso: {1}",
                     mClients.Count, client.Client.RemoteEndPoint);
                 
                 RiceviMessaggio(client);
@@ -90,14 +90,14 @@ namespace Singh_SocketAsyncLib
                 int nBytes = 0;
                 while (true)
                 {
-                    Debug.WriteLine("In attesa di un messaggio");
+                    Console.WriteLine("In attesa di un messaggio");
                     //ricezione messaggio asincrono
                     nBytes = await reader.ReadAsync(buff, 0, buff.Length);
                     if (nBytes == 0)
                     {
                         RimuoviClient(client);
-                        Debug.WriteLine("Client Disconnesso");
-                        break;
+                        Console.WriteLine("Client Disconnesso"); 
+                        break; 
                     }
                     string recvText = new string(buff,0,nBytes);
 
@@ -129,7 +129,7 @@ namespace Singh_SocketAsyncLib
             catch (Exception ex)
             {
 
-                Debug.WriteLine("Errore: " + ex.Message);
+                Console.WriteLine("Errore: " + ex.Message);
             }
 
 
@@ -158,7 +158,7 @@ namespace Singh_SocketAsyncLib
             catch (Exception ex)
             {
 
-                Debug.WriteLine("Errore: " + ex.Message);
+                Console.WriteLine("Errore: " + ex.Message);
             }
 
         }
@@ -178,7 +178,7 @@ namespace Singh_SocketAsyncLib
             catch (Exception ex)
             {
 
-                Debug.WriteLine("Errore: " + ex.Message);
+                Console.WriteLine("Errore: " + ex.Message);
             }
 
         }

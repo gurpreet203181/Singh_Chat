@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Singh_Chat_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="Chat App" Height="1080" Width="1920">
     <Grid>
-        
+        <ListView Margin="23,178,1673,189">
+            <ListViewItem
+    Content="Hello"   
+                />
+            <ListViewItem
+    Content="World" />
+            <ListViewItem
+    Content=":)" />
+        </ListView>
+        <TextBox x:Name="Txt_Prova" HorizontalAlignment="Left" Height="65" Margin="1238,309,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="Btn_Prova" Content="Button" HorizontalAlignment="Left" Margin="1267,396,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Prova_Click"/>
+
     </Grid>
 </Window>

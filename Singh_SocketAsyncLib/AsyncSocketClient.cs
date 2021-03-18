@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using System.Diagnostics;
 
 namespace Singh_SocketAsyncLib
 {
@@ -34,7 +35,7 @@ namespace Singh_SocketAsyncLib
             IPAddress ipaddr = null;
             if (!IPAddress.TryParse(str_IPAddress, out ipaddr))
             {
-                Console.WriteLine("Ip non valido.");
+                Debug.WriteLine("Ip non valido.");
                 return false;
             }
 
@@ -51,7 +52,7 @@ namespace Singh_SocketAsyncLib
             }
             if (port < 0 || port > 65535)
             {
-                Console.WriteLine("La porta deve essere compressa tra 0 e 65535");
+                Debug.WriteLine("La porta deve essere compressa tra 0 e 65535");
                 return false;
             }
             mServerPort = port;
@@ -68,14 +69,16 @@ namespace Singh_SocketAsyncLib
             try
             {
                 await mClient.ConnectAsync(mServerIpAddress, mServerPort);
-                Console.WriteLine("Connesso al server IP/Port: {0} / {1}",
+                Debug.WriteLine("Connesso al server IP/Port: {0} / {1}",
                                     mServerIpAddress.ToString(), mServerPort);
+             
+
                 RiceviMessaggi();
             }
             catch (Exception ex)
             {
-
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
+               
             }
         }
 
@@ -115,6 +118,7 @@ namespace Singh_SocketAsyncLib
             }
             if (!mClient.Connected)
             {
+                Debug.WriteLine("Not connected");
                 return;
             }
 
@@ -122,12 +126,13 @@ namespace Singh_SocketAsyncLib
             {
                 byte[] buff = Encoding.ASCII.GetBytes(messaggio);
                 mClient.GetStream().WriteAsync(buff, 0, buff.Length);
-
+                Debug.WriteLine("Sended");
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
+
             }
         }
 
