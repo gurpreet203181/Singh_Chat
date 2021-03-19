@@ -42,7 +42,6 @@ namespace Singh_SocketAsyncLib
             Console.WriteLine("Server in ascolto su IP: {0} - Porta: {1}"
                                  , mIP.ToString(), mPort.ToString());
             mServer.Start();
-            timerMsg();
 
             Console.WriteLine("Server avviato.");
             while (true)
@@ -60,23 +59,8 @@ namespace Singh_SocketAsyncLib
         }
        
         //metodo per inviare metodo Inviatutti ogni 10sec
-        public  void timerMsg()
-        {
-            
-            
-                    System.Timers.Timer timer = new System.Timers.Timer();
-                    timer.Interval = 10000;
-                    timer.Elapsed += timer_Elapsed;
+      
 
-                    timer.Start();
-
-                
-            
-        }
-        public void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            InviaATutti();
-        }
         public async void RiceviMessaggio(TcpClient client)
         {
             NetworkStream stream = null;
@@ -99,31 +83,39 @@ namespace Singh_SocketAsyncLib
                         Console.WriteLine("Client Disconnesso"); 
                         break; 
                     }
-                    string recvText = new string(buff,0,nBytes);
 
-
-                    switch (recvText.Trim().ToLower())
-                    {
-                        case "date":
-
-                            buffsend = Encoding.ASCII.GetBytes("data");
-                             client.GetStream().WriteAsync(buffsend, 0, buffsend.Length);
-
-                            break;
-                           
-                        case "time":
-
-                           buffsend = Encoding.ASCII.GetBytes("ora");
-                             client.GetStream().WriteAsync(buffsend, 0, buffsend.Length);
-                            break;
-
-                        default:
-                            buffsend = Encoding.ASCII.GetBytes("Non ho capito");
-                            client.GetStream().WriteAsync(buffsend, 0, buffsend.Length);
-                            break;
-                    }
-                    Debug.WriteLine("N° byte: {0}. Messaggio: {1}", nBytes, recvText);
                 }
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Errore: " + ex.Message);
+            }
+
+
+        }
+        public async void RegistraClient(TcpClient client)
+        {
+            NetworkStream stream = null;
+            StreamReader reader = null;
+            try
+            {
+                stream = client.GetStream();
+                reader = new StreamReader(stream);
+                char[] buff = new char[512];
+                int nBytes = 0;
+               
+                    Console.WriteLine("In attesa di un messaggio");
+                    //ricezione messaggio asincrono
+                    nBytes = await reader.ReadAsync(buff, 0, buff.Length);
+
+                string recvText = new string(buff);
+                NicknameModel newClient = new NicknameModel();
+                newClient.NickName = recvText;
+                newClient.Client = client;
+
+                
 
             }
             catch (Exception ex)
