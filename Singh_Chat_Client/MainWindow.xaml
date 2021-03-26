@@ -11,19 +11,11 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Chat App" Height="1080" Width="1920">
+        Title="Chat App" Height="1080" Width="1920" Icon="Src1/Group.jpg" WindowState="Maximized">
     <Grid>
-        <ListView Margin="23,178,1673,189">
-            <ListViewItem
-    Content="Hello"   
-                />
-            <ListViewItem
-    Content="World" />
-            <ListViewItem
-    Content=":)" />
-        </ListView>
-        <TextBox x:Name="Txt_Prova" HorizontalAlignment="Left" Height="65" Margin="1238,309,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
-        <Button x:Name="Btn_Prova" Content="Button" HorizontalAlignment="Left" Margin="1267,396,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Prova_Click"/>
+        <TextBox x:Name="Txt_Prova" HorizontalAlignment="Left" Height="29" Margin="434,378,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="196"/>
+        <Button x:Name="Btn_Prova" Content="Button" HorizontalAlignment="Left" Margin="476,422,0,0" VerticalAlignment="Top" Width="109" Click="Btn_Prova_Click" Height="34"/>
+        <ListBox x:Name="Lst_Message" HorizontalAlignment="Left" Height="330" Margin="727,359,0,0" VerticalAlignment="Top" Width="220" Background="#FFE2E2E2"/>
 
     </Grid>
 </Window>

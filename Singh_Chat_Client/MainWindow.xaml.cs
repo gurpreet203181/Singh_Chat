@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,14 +22,19 @@ namespace Singh_Chat_Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        AsyncSocketClient mClient;
+        public MainWindow(AsyncSocketClient LoggedClient)
         {
             InitializeComponent();
-        }
+            mClient = LoggedClient;
+
+             Lst_Message.Items.Add(mClient.RiceviMessaggi());
+        }  
 
         private void Btn_Prova_Click(object sender, RoutedEventArgs e)
         {
-
+            mClient.Invia(Txt_Prova.Text);
+            Lst_Message.Items.Add(Txt_Prova.Text);
         }
     }
 }

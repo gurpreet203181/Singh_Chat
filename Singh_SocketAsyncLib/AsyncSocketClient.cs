@@ -59,6 +59,7 @@ namespace Singh_SocketAsyncLib
             return true;
         }
 
+
         public async Task ConnettiAlServer()
         {
             if (mClient == null)
@@ -71,8 +72,8 @@ namespace Singh_SocketAsyncLib
                 await mClient.ConnectAsync(mServerIpAddress, mServerPort);
                 Debug.WriteLine("Connesso al server IP/Port: {0} / {1}",
                                     mServerIpAddress.ToString(), mServerPort);
-             
 
+               
                 RiceviMessaggi();
             }
             catch (Exception ex)
@@ -81,8 +82,22 @@ namespace Singh_SocketAsyncLib
                
             }
         }
+        public bool IsConnected()// metodo per vedere se è connesso
+        {
+           
 
-        private async Task RiceviMessaggi()
+            if (mClient==null||!mClient.Connected)
+            {
+                return false;
+
+            }
+
+            return true;
+
+
+
+        }
+        public async Task RiceviMessaggi()
         {
             NetworkStream stream = null;
             StreamReader reader = null;
@@ -98,17 +113,23 @@ namespace Singh_SocketAsyncLib
                     nBytes = await reader.ReadAsync(buff, 0, buff.Length);
                     if (nBytes == 0)
                     {
-                        Console.WriteLine("Disconnesso.");
+                        Debug.WriteLine("Disconnesso.");
                         break;
                     }
+
                     string recvMessage = new string(buff, 0, nBytes);
-                    Console.WriteLine(recvMessage);
+                    Debug.WriteLine(recvMessage);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+        public string Messaggio ()
+        {
+
+            return "d";
         }
         public void Invia(string messaggio)
         {

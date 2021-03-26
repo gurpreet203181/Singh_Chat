@@ -32,67 +32,55 @@ namespace Singh_Chat_Client
         
 
 
-        private void Btn_Login_Click_1(object sender, RoutedEventArgs e)
+        private async void Btn_Login_Click_1(object sender, RoutedEventArgs e)
         {
-
-            if (!string.IsNullOrWhiteSpace(Txt_Username.Text))
+            try
             {
-
-
-                if (!string.IsNullOrWhiteSpace(Pass_Password.Password))
-                {
-                    if (mClient.SetServerIPAddress(Txt_Ip.Text) && mClient.SetServerPort(Txt_Port.Text))
-                    {
-
-                         mClient.ConnettiAlServer();
-
-                            if (mClient.ConnettiAlServer().IsCompleted)
-                            {
-                                MessageBox.Show("done");
-                                 //MainWindow win2 = new MainWindow();
-                            //win2.Show();
-                            //this.Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Invalid IP o Port");
-                            
-                            }
-                            
-                          
-                            //MainWindow win2 = new MainWindow();
-                            //win2.Show();
-                            //this.Hide();
-
-                        
-
-
-                        
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("IP O PORT are not valid");
-                        Txt_Port.Focus();
-                    }
-
-                    
-                }
-                else { MessageBox.Show("Password not valid");
-
-                    Pass_Password.Focus();
-                }
+                Controlli();// metodo per controllare se username , password , ip, porta è valida
+                            // e passa valore di porta e ip address all lib socketclient
+                await mClient.ConnettiAlServer();
                 
+                if (mClient.IsConnected()) //metodo per vedere se il client è connessio all server
+                {
+                    MessageBox.Show("connected");
+
+                     mClient.Invia(Txt_Username.Text);
+                     MainWindow win2 = new MainWindow(mClient);
+                     win2.Show();
+                     this.Hide();
+
+
+                }
+                else MessageBox.Show("Failed to connect to server check ip o port");
+
+
+
+
+               
+
+
 
             }
-            else {
-                MessageBox.Show("Username not valid");
-                Txt_Username.Focus();
-            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
            
         }
 
 
-        
+
+        private void Controlli()
+        {
+            if (string.IsNullOrWhiteSpace(Txt_Username.Text))
+            throw new Exception("Username not valid");
+            
+            if (string.IsNullOrWhiteSpace(Pass_Password.Password)) 
+                throw new Exception("Password not valid");
+            
+            if (mClient.SetServerIPAddress(Txt_Ip.Text) && mClient.SetServerPort(Txt_Port.Text)) { }//controlla e passa valore
+               else throw new Exception("IP O PORT are not valid");
+
+        }
     }
 }

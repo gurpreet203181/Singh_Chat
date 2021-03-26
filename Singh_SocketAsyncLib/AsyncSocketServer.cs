@@ -14,11 +14,11 @@ namespace Singh_SocketAsyncLib
         IPAddress mIP;
         int mPort;
         TcpListener mServer;
-        List<TcpClient> mClients;
+        List<NicknameModel> mClients;
 
         public AsyncSocketServer()
         {
-            mClients = new List<TcpClient>();
+            mClients = new List<NicknameModel>();
         }
 
         // Server inizia as ascoltare
@@ -43,22 +43,17 @@ namespace Singh_SocketAsyncLib
                                  , mIP.ToString(), mPort.ToString());
             mServer.Start();
 
-            Console.WriteLine("Server avviato.");
             while (true)
             {
                 TcpClient client = await mServer.AcceptTcpClientAsync();
 
-                mClients.Add(client);
-
-                Console.WriteLine("Client Connessi: {0}. Client Connesso: {1}",
-                    mClients.Count, client.Client.RemoteEndPoint);
+                RegistraClient(client);
                 
                 RiceviMessaggio(client);
             }
 
         }
        
-        //metodo per inviare metodo Inviatutti ogni 10sec
       
 
         public async void RiceviMessaggio(TcpClient client)
@@ -74,7 +69,7 @@ namespace Singh_SocketAsyncLib
                 int nBytes = 0;
                 while (true)
                 {
-                    Console.WriteLine("In attesa di un messaggio");
+                    Console.WriteLine("In attesa di un messaggio .");
                     //ricezione messaggio asincrono
                     nBytes = await reader.ReadAsync(buff, 0, buff.Length);
                     if (nBytes == 0)
@@ -83,6 +78,8 @@ namespace Singh_SocketAsyncLib
                         Console.WriteLine("Client Disconnesso"); 
                         break; 
                     }
+                    string recText = new string(buff);
+                    InviaATutti(recText);
 
                 }
 
@@ -106,7 +103,6 @@ namespace Singh_SocketAsyncLib
                 char[] buff = new char[512];
                 int nBytes = 0;
                
-                    Console.WriteLine("In attesa di un messaggio");
                     //ricezione messaggio asincrono
                     nBytes = await reader.ReadAsync(buff, 0, buff.Length);
 
@@ -115,7 +111,7 @@ namespace Singh_SocketAsyncLib
                 newClient.NickName = recvText;
                 newClient.Client = client;
 
-                
+                mClients.Add(newClient);
 
             }
             catch (Exception ex)
@@ -128,40 +124,43 @@ namespace Singh_SocketAsyncLib
         }
         private void RimuoviClient(TcpClient client)
         {
-            if (mClients.Contains(client))
+            NicknameModel nm = mClients.Where(riga => riga.Client == client).FirstOrDefault();
+
+            if (nm !=null)
             {
-                mClients.Remove(client);
+                mClients.Remove(nm);
             }
         }
         
 
-        public void InviaATutti()
+        public void InviaATutti(string messaggio)
         {
-            string dateTime = DateTime.Now.ToString("dd MM yyyy,hh:mm:ss");
-            try
+          
+          try
             {
-                foreach (TcpClient client in mClients)
-                {
-                    byte[] buff = Encoding.ASCII.GetBytes($"{dateTime}");
-                    client.GetStream().WriteAsync(buff, 0, buff.Length);
+               foreach (NicknameModel client in mClients)
+               {
+                   byte[] buff = Encoding.ASCII.GetBytes(messaggio);
+                   client.Client.GetStream().WriteAsync(buff, 0, buff.Length);
 
-                }
-            }
-            catch (Exception ex)
-            {
+               }
+               // Console.WriteLine("Invia tutti" +messaggio);
+           }
+           catch (Exception ex)
+           {
 
                 Console.WriteLine("Errore: " + ex.Message);
-            }
+           }
 
         }
         public void Disconnetti()
         {
             try
             {
-                foreach (TcpClient client in mClients)
+                foreach (NicknameModel client in mClients)
                 {
-                    client.Close();
-                    RimuoviClient(client);
+                    client.Client.Close();
+                    RimuoviClient(client.Client);
                 }
                 mServer.Stop();
 
@@ -176,4 +175,4 @@ namespace Singh_SocketAsyncLib
         }
 
     }
-    }
+ }

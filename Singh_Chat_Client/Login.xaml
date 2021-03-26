@@ -48,7 +48,7 @@
         materialDesign:TextFieldAssist.HasLeadingIcon="True"
         materialDesign:TextFieldAssist.LeadingIcon="Ethernet"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-  VerticalAlignment="Center" Margin="66,312,223,211" Height="48"  />
+  VerticalAlignment="Center" Margin="67,311,222,212" Height="48"  />
         <TextBox x:Name="Txt_Ip"
   materialDesign:HintAssist.Hint="IP Address"
             
@@ -64,7 +64,7 @@
         <CheckBox x:Name="Chck_Rembere"
   Content="Remember me"
   Style="{StaticResource MaterialDesignCheckBox}" Margin="82,374,195,149"  Background="#FFAAA713" BorderBrush="#FFAAA713" FontSize="12" Foreground="#FF032D23" FontFamily="Inter"  />
-        <Label x:Name="label2" Content="Forget Password?" HorizontalAlignment="Left" Margin="210,384,0,0" VerticalAlignment="Top" FontSize="12" FontFamily="Inter" Foreground="#FF032D23" Height="26"/>
+        <Label x:Name="label2" Content="Forget Password?" HorizontalAlignment="Left" Margin="210,388,0,0" VerticalAlignment="Top" FontSize="12" FontFamily="Inter" Foreground="#FF032D23" Height="26"/>
         <Button
            
   ToolTip="Login"
