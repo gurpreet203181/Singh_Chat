@@ -47,11 +47,11 @@ namespace Singh_Chat_Client
                      mClient.Invia(Txt_Username.Text);
                      MainWindow win2 = new MainWindow(mClient);
                      win2.Show();
-                     this.Hide();
+                     this.Close();
 
 
                 }
-                else MessageBox.Show("Failed to connect to server check ip o port");
+                else Lbl_errore.Content="Failed to connect to server check ip o port";
 
 
 
@@ -63,7 +63,7 @@ namespace Singh_Chat_Client
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Lbl_errore.Content=ex.Message;
             }
            
         }

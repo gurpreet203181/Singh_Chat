@@ -70,8 +70,7 @@
   ToolTip="Login"
             x:Name="Btn_Login"
   Content="Login" Margin="96,421,88,103"    Background="#FF6588DE" Foreground="White" FontFamily="Inter" FontSize="20" FontWeight="SemiBold" Height="Auto" Click="Btn_Login_Click_1" />
-        <Label x:Name="label2_Copy" Content="Don't have an account?" HorizontalAlignment="Left" Margin="91,498,0,0" VerticalAlignment="Top" FontSize="12" FontFamily="Inter" Foreground="#FF032D23" Height="26"/>
-        <Label x:Name="label2_Copy1" Content="Get Started" HorizontalAlignment="Left" Margin="235,498,0,0" VerticalAlignment="Top" FontSize="12" FontFamily="Inter" Foreground="#FFAAA713" Height="26"/>
+        <Label x:Name="Lbl_errore" Content=""   HorizontalAlignment="Left" Margin="94,473,0,0" VerticalAlignment="Top" FontSize="12" FontFamily="Inter" Foreground="Red" Height="51" Width="272"/>
 
 
     </Grid>

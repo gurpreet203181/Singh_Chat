@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "z0q/9pjzizHzlz+aRBz2hd8mJ4vAM8zmo0LzKISgrqSzQK4yvJ48C4hXsEWLxaEYD41xcUHhkz3gJBp7HYUmwA==",
+  "dgSpecHash": "ODuYleqw6pw3tycXe3e9MpZpE14xcjge7MQA/IbIe+4I3pI3H80LquGie5gB+iLWocvdRBNdHUrgAhc6UXiuzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gurpreet\\source\\repos\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj",
+  "projectFilePath": "C:\\Users\\Studente\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Gurpreet\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Studente\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Studente\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

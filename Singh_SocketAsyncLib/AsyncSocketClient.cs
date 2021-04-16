@@ -16,6 +16,15 @@ namespace Singh_SocketAsyncLib
         int mServerPort;
         TcpClient mClient;
 
+        public List<string> Messaggi = new List<string>();
+        public event EventHandler OnNewMessage;
+
+        protected virtual void OnNewMessageHandler(EventArgs e)
+        {
+            EventHandler handler = OnNewMessage;
+            handler?.Invoke(this, e);
+        }
+
         public IPAddress ServerIpAddress
         {
             get
@@ -118,7 +127,13 @@ namespace Singh_SocketAsyncLib
                     }
 
                     string recvMessage = new string(buff, 0, nBytes);
-                    Debug.WriteLine(recvMessage);
+
+                    Messaggi.Add(recvMessage);
+
+
+                    EventArgs e = new EventArgs();
+                    OnNewMessageHandler(e);
+
                 }
             }
             catch (Exception ex)

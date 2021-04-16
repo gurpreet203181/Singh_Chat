@@ -27,14 +27,24 @@ namespace Singh_Chat_Client
         {
             InitializeComponent();
             mClient = LoggedClient;
+            mClient.OnNewMessage += client_onNewMessage;
 
-             Lst_Message.Items.Add(mClient.RiceviMessaggi());
-        }  
+        }
+
+        private void client_onNewMessage(object sender, EventArgs e)
+        {
+            Lst_Message.ItemsSource = mClient.Messaggi;
+            Lst_Message.Items.Refresh();
+        }
 
         private void Btn_Prova_Click(object sender, RoutedEventArgs e)
         {
             mClient.Invia(Txt_Prova.Text);
-            Lst_Message.Items.Add(Txt_Prova.Text);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }

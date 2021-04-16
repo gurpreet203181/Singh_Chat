@@ -7,3 +7,12 @@ C:\Users\Gurpreet\source\repos\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstan
 C:\Users\Gurpreet\source\repos\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.csproj.CoreCompileInputs.cache
 C:\Users\Gurpreet\source\repos\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.dll
 C:\Users\Gurpreet\source\repos\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.pdb
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\bin\Debug\netstandard2.0\Singh_SocketAsyncLib.deps.json
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\bin\Debug\netstandard2.0\Singh_SocketAsyncLib.dll
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\bin\Debug\netstandard2.0\Singh_SocketAsyncLib.pdb
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.csprojAssemblyReference.cache
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.AssemblyInfoInputs.cache
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.AssemblyInfo.cs
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.csproj.CoreCompileInputs.cache
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.dll
+C:\Users\Studente\Desktop\Singh_Chat\Singh_SocketAsyncLib\obj\Debug\netstandard2.0\Singh_SocketAsyncLib.pdb
