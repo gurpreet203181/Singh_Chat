@@ -12,9 +12,9 @@ namespace Singh_Chat_Server
         static void Main(string[] args)
         {
            
-                
             AsyncSocketServer mServer;
-            mServer = new AsyncSocketServer();
+            mServer 
+                = new AsyncSocketServer();
             mServer.InAscolto();
 
             Console.ReadLine();

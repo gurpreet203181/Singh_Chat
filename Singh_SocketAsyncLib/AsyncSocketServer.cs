@@ -79,13 +79,17 @@ namespace Singh_SocketAsyncLib
                         break; 
                     }
                     string recText = new string(buff);
-                    InviaATutti(recText);
+
+                    NicknameModel nickClient = mClients.Where(e => e.Client == client).FirstOrDefault();
+                    string risposta = $"{nickClient.NickName}:{recText}";
+                    InviaATutti(risposta);
 
                 }
 
             }
             catch (Exception ex)
             {
+                        RimuoviClient(client);
 
                 Console.WriteLine("Errore: " + ex.Message);
             }
