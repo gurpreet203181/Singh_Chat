@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\studenti\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj": {}
+    "C:\\Users\\Studente\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\studenti\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj": {
+    "C:\\Users\\Studente\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\studenti\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj",
+        "projectUniqueName": "C:\\Users\\Studente\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj",
         "projectName": "Singh_SocketAsyncLib",
-        "projectPath": "C:\\Users\\studenti\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj",
-        "packagesPath": "C:\\Users\\studenti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\studenti\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\obj\\",
+        "projectPath": "C:\\Users\\Studente\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\Singh_SocketAsyncLib.csproj",
+        "packagesPath": "C:\\Users\\Studente\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Studente\\Desktop\\Singh_Chat\\Singh_SocketAsyncLib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\studenti\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Studente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -31,6 +26,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -42,6 +38,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -60,7 +57,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.114\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

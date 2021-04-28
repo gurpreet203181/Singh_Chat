@@ -13,25 +13,12 @@
         mc:Ignorable="d"
         Title="LoginPage" Height="600" Width="406" Icon="Src1/Group.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="White">
-        <Label x:Name="label" Content="Login" HorizontalAlignment="Left" Margin="88,108,0,0"   VerticalAlignment="Top" FontStyle="Normal" FontSize="40" FontFamily="Lucida Fax" Background="{x:Null}" Foreground="#FF6588DE" FontWeight="Bold"/>
-
-
-        <PasswordBox x:Name="Pass_Password"
-            
-         Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
-         VerticalAlignment="Top"
-         materialDesign:HintAssist.Hint="Password"  Margin="89,242,96,0"  
-          materialDesign:TextFieldAssist.HasClearButton="True" 
-            materialDesign:TextFieldAssist.HasLeadingIcon="True"
-                 materialDesign:TextFieldAssist.HasFilledTextField="True"
-     
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF032D23" Foreground="#FF032D23"   
-            />
+        <Label x:Name="label" Content="Login" HorizontalAlignment="Left" Margin="80,142,0,0"   VerticalAlignment="Top" FontStyle="Normal" FontSize="40" FontFamily="Lucida Fax" Background="{x:Null}" Foreground="#FF6588DE" FontWeight="Bold"/>
 
         <TextBox x:Name="Txt_Username"     Style="{StaticResource MaterialDesignOutlinedTextBox}"
                      
     VerticalAlignment="Top" 
-    materialDesign:HintAssist.Hint="Username" Margin="89,179,96,0" 
+    materialDesign:HintAssist.Hint="Username" Margin="83,227,102,0" 
             materialDesign:TextFieldAssist.HasClearButton="True" 
                      
         materialDesign:TextFieldAssist.HasLeadingIcon="True"
@@ -48,7 +35,7 @@
         materialDesign:TextFieldAssist.HasLeadingIcon="True"
         materialDesign:TextFieldAssist.LeadingIcon="Ethernet"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-  VerticalAlignment="Center" Margin="67,311,222,212" Height="48"  />
+  VerticalAlignment="Center" Margin="64,322,225,201" Height="48" Text="23000"  />
         <TextBox x:Name="Txt_Ip"
   materialDesign:HintAssist.Hint="IP Address"
             
@@ -57,14 +44,10 @@
         materialDesign:TextFieldAssist.HasLeadingIcon="True"
         materialDesign:TextFieldAssist.LeadingIcon="IP"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-  VerticalAlignment="Center" Margin="191,311,62,212" Height="48" />
+  VerticalAlignment="Center" Margin="188,322,65,201" Height="48" />
 
         <Label x:Name="label1" Content="Welcome to" HorizontalAlignment="Left" Margin="56,47,0,0"   VerticalAlignment="Top"  FontStyle="Normal" FontSize="25" FontFamily="Lucida Fax" Background="{x:Null}" Foreground="#FF032D23" FontWeight="Bold"/>
         <Label x:Name="label1_Copy" Content="Message" HorizontalAlignment="Left" Margin="221,48,0,0"   VerticalAlignment="Top" FontStyle="Normal" FontSize="25" FontFamily="Lucida Fax" Background="{x:Null}" Foreground="#FFAAA713" FontWeight="Bold"/>
-        <CheckBox x:Name="Chck_Rembere"
-  Content="Remember me"
-  Style="{StaticResource MaterialDesignCheckBox}" Margin="82,374,195,149"  Background="#FFAAA713" BorderBrush="#FFAAA713" FontSize="12" Foreground="#FF032D23" FontFamily="Inter"  />
-        <Label x:Name="label2" Content="Forget Password?" HorizontalAlignment="Left" Margin="210,388,0,0" VerticalAlignment="Top" FontSize="12" FontFamily="Inter" Foreground="#FF032D23" Height="26"/>
         <Button
            
   ToolTip="Login"

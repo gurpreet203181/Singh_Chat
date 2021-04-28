@@ -42,7 +42,7 @@ namespace Singh_Chat_Client
                 
                 if (mClient.IsConnected()) //metodo per vedere se il client è connessio all server
                 {
-                    MessageBox.Show("connected");
+                    MessageBox.Show("connesso");
 
                      mClient.Invia(Txt_Username.Text);
                      MainWindow win2 = new MainWindow(mClient);
@@ -51,7 +51,7 @@ namespace Singh_Chat_Client
 
 
                 }
-                else Lbl_errore.Content="Failed to connect to server check ip o port";
+                else Lbl_errore.Content= "Impossibile connettersi al server controllare ip o porta";
 
 
 
@@ -80,6 +80,11 @@ namespace Singh_Chat_Client
             
             if (mClient.SetServerIPAddress(Txt_Ip.Text) && mClient.SetServerPort(Txt_Port.Text)) { }//controlla e passa valore
                else throw new Exception("IP O PORT are not valid");
+
+        }
+
+        private void Txt_Username_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

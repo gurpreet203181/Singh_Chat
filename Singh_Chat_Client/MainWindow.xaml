@@ -7,21 +7,28 @@
         mc:Ignorable="d"
           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="#FFFAFAFA"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Chat App" Height="1080" Width="1920" Icon="Src1/Group.jpg" WindowState="Maximized" Closed="Window_Closed">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="130*"/>
-            <ColumnDefinition Width="339*"/>
-        </Grid.ColumnDefinitions>
-        <TextBox x:Name="Txt_Prova" HorizontalAlignment="Left" Height="29" Margin="398,378,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="196" Grid.Column="2" Grid.ColumnSpan="2"/>
-        <Button x:Name="Btn_Prova" Content="Button" HorizontalAlignment="Left" Margin="440,422,0,0" VerticalAlignment="Top" Width="109" Click="Btn_Prova_Click" Height="34" Grid.Column="2" Grid.ColumnSpan="2"/>
-        <ListBox x:Name="Lst_Message" HorizontalAlignment="Left" Height="330" Margin="171,359,0,0" VerticalAlignment="Top" Width="220" Background="#FFE2E2E2" Grid.Column="3"/>
-
+        Title="Chat App"  Icon="Src1/Group.jpg" WindowState="Maximized" Closed="Window_Closed" Width="1386" Height="714">
+    <Grid HorizontalAlignment="Left" Width="1374" Background="#FFFDFDFE" Margin="0,0,0,4">
+        <TextBox x:Name="txt_invia"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+    VerticalAlignment="Top"
+    Height="58"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+    VerticalScrollBarVisibility="Auto"
+    materialDesign:HintAssist.Hint="Scrivi qui..." Margin="51,580,47,0" Background="White"/>
+        <ListBox x:Name="lst_msg" Margin="60,122,46,136" Background="#FFF3BA4A" Foreground="#DDFFFFFF" FontSize="20" FontWeight="Normal">
+           
+        </ListBox>
+        <Button x:Name="btn_invia"
+  Content="{materialDesign:PackIcon Send}"
+  ToolTip="Icon" Margin="1126,589,72,58" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_invia_Click" RenderTransformOrigin="0.5,0.297" />
+        <materialDesign:Chip
+  Content="    CHAT"
+   RenderTransformOrigin="0.808,-0.344" Margin="660,42,0,591" Width="123" Background="#120025FF" FontSize="18" FontWeight="Normal" Height="Auto" />
     </Grid>
 </Window>
